@@ -7,10 +7,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using FluentValidation.AspNetCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FluentValidation;
 
 namespace LearnAspCore
 {
@@ -31,12 +33,15 @@ namespace LearnAspCore
 
             services.Configure<LimitingOptions>(Configuration.GetSection("LimitingOptions"));
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                .AddFluentValidation();
+
+            services.AddTransient<IValidator<Product>, ProductValidator>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            if (!env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }

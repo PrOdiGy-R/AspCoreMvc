@@ -1,11 +1,12 @@
-﻿using System;
+﻿using FluentValidation;
+using System;
 using System.Collections.Generic;
 
 #nullable disable
 
 namespace LearnAspCore.Models
 {
-    public partial class Product
+    public class Product
     {
         public Product()
         {
@@ -26,5 +27,21 @@ namespace LearnAspCore.Models
         public virtual Category Category { get; set; }
         public virtual Supplier Supplier { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+    }
+
+    public class ProductValidator : AbstractValidator<Product>
+    {
+        public ProductValidator()
+        {
+            RuleFor(x => x.ProductName)
+                .NotNull()
+                .MaximumLength(40);
+
+            RuleFor(x => x.QuantityPerUnit)
+                .MaximumLength(20);
+
+            RuleFor(x => x.UnitPrice)
+                .GreaterThan(0);
+        }
     }
 }
