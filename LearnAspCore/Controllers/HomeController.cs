@@ -1,4 +1,5 @@
 ﻿using LearnAspCore.Models;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -31,6 +32,9 @@ namespace LearnAspCore.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
+            var error = HttpContext.Features.Get<IExceptionHandlerFeature>().Error;
+
+            _logger.LogError($"Exception occurred: {error.Message}, RequestId = {Activity.Current?.Id ?? HttpContext.TraceIdentifier}");
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
