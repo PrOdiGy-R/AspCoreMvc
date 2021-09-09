@@ -1,5 +1,5 @@
-using LearnAspCore.Data;
-using LearnAspCore.Models;
+using AspCore.Data;
+using AspCore.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -14,7 +14,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FluentValidation;
 
-namespace LearnAspCore
+namespace AspCore
 {
     public class Startup
     {

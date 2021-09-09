@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using LearnAspCore.Models;
+using AspCore.Models;
 
 #nullable disable
 
-namespace LearnAspCore.Data
+namespace AspCore.Data
 {
     public partial class NorthwindDbContext : DbContext
     {

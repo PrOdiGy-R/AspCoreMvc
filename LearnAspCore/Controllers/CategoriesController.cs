@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using LearnAspCore.Data;
-using LearnAspCore.Models;
+using AspCore.Data;
+using AspCore.Models;
 
-namespace LearnAspCore.Controllers
+namespace AspCore.Controllers
 {
     public class CategoriesController : Controller
     {

@@ -1,4 +1,4 @@
-﻿using LearnAspCore.Models;
+﻿using AspCore.Models;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LearnAspCore.Controllers
+namespace AspCore.Controllers
 {
     public class HomeController : Controller
     {

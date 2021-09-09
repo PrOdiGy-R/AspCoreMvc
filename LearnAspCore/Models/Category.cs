@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace LearnAspCore.Models
+namespace AspCore.Models
 {
     public class Category
     {

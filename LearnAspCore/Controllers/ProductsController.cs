@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using LearnAspCore.Data;
-using LearnAspCore.Models;
+using AspCore.Data;
+using AspCore.Models;
 using Microsoft.Extensions.Options;
 
-namespace LearnAspCore.Controllers
+namespace AspCore.Controllers
 {
     public class ProductsController : Controller
     {
